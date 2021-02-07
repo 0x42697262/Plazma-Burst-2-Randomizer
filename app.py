@@ -11,7 +11,7 @@ def index():
 @app.route('/player', methods = ['POST'])
 def player():
     if "players" in request.args:
-        return list(filter(None, random.choice(request.args.get('players').split(','))))
+        return random.choice(list(filter(None, request.args.get('players').split(','))))
 
 if __name__ == '__main__':
   app.run(debug=False)
